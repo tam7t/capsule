@@ -3,12 +3,15 @@
   <!-- Hero header: will stick at the top -->
   <div class="hero-head">
 
-    <nav class="navbar {{ if not (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}has-shadow{{ end }}"
+    <nav class="navbar {{ if not (fileExists (print "/static" ($.Scratch.Get "hero"))) }}has-shadow{{ end }}"
          role="navigation" aria-label="main navigation">
       <div class="container">
 
         <div class="navbar-brand">
           <a class="navbar-item" href="/">
+            {{- if (fileExists (print "/static" .Site.Data.defaults.icons.brand)) }}
+            <img alt="Brand" src="{{ .Site.Data.defaults.icons.brand }}">
+            {{- end }}
             <div class="title is-4">&nbsp;{{ .Site.Title }}</div>
           </a>
 
@@ -42,11 +45,12 @@
 
   </div>
 
-{{- if (fileExists (print "/static" .Site.Data.defaults.icons.banner)) }}
+{{- if (fileExists (print "/static" ($.Scratch.Get "hero"))) }}
   <!-- Hero content: will be in the middle -->
   <div class="hero-body"
-       style="background:url('{{ .Site.BaseURL }}/{{ $.Scratch.Get "prefix" }}{{ .Site.Data.defaults.icons.banner }}') center;
-              background-size: auto 100%;">
+       style="background:url('{{ .Site.BaseURL }}/{{ $.Scratch.Get "prefix" }}{{ $.Scratch.Get "hero" }}') center;
+              background-size: 100% auto;
+              padding:15rem;">
   </div>
 {{- end }}
 

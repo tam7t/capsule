@@ -5,6 +5,7 @@
 
   <body style="min-height:100vh;display:flex;flex-direction:column">
 
+    {{- $.Scratch.Set "hero" .Site.Data.defaults.icons.banner}}
     {{ partial "navbar-hero.html" . }}
 
     <section class="section" style="flex:1">

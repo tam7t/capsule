@@ -5,7 +5,7 @@
   <ul class="menu-list">
     {{- range $key, $value := $taxonomy }}
     <li>
-      <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $key) | urlize | lower }}">
+      <a href="{{ ($.Site.GetPage $key).Permalink }}">
         <div class="tags has-addons">
           <span class="tag">{{ $key | humanize | title }}</span>
           <span class="tag is-link">{{ len $value }}</span>

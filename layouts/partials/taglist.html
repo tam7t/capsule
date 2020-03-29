@@ -19,7 +19,7 @@
 <div class="field is-grouped is-grouped-multiline">
   {{- range $item := $value }}
   <div class="control">
-    <a href="{{ "/" | relLangURL }}{{ (printf "%s/%s" $name $item) | urlize | lower }}">
+    <a href="{{ ($.Site.GetPage $item).Permalink  }}">
       <span class="tag">{{ $item | humanize | title }}</span>
     </a>
   </div>

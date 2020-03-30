@@ -5,7 +5,7 @@
       <div class="level-item">
         <p class="control has-addons">
           {{- if .NextInSection }}
-          <a class="button" href="{{ .NextInSection.Permalink }}">
+          <a class="button" href="{{ .NextInSection.RelPermalink }}">
             <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .NextInSection.Title | truncate 100 "..." }}
@@ -36,7 +36,7 @@
       <div class="level-item">
         <p class="control has-addons">
           {{- if .PrevInSection }}
-          <a class="button" href="{{ .PrevInSection.Permalink }}">
+          <a class="button" href="{{ .PrevInSection.RelPermalink }}">
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .PrevInSection.Title | truncate 100 "..." }}
             </span>

@@ -5,7 +5,7 @@
       <div class="level-item">
         <p class="control has-addons">
           {{- if .NextPage }}
-          <a class="button" href="{{ .NextPage.Permalink }}">
+          <a class="button" href="{{ .NextPage.RelPermalink }}">
             <span class="icon is-small"><i class="fa fa-chevron-left"></i></span>
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .NextPage.Title | truncate 100 "..." }}
@@ -35,7 +35,7 @@
       <div class="level-item">
         <p class="control has-addons">
           {{- if .PrevPage }}
-          <a class="button" href="{{ .PrevPage.Permalink }}">
+          <a class="button" href="{{ .PrevPage.RelPermalink }}">
             <span class="is-hidden-touch is-hidden-desktop-only">
               {{ .PrevPage.Title | truncate 100 "..." }}
             </span>

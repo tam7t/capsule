@@ -31,7 +31,7 @@
     {{- end }}
     {{- if lt ($.Scratch.Get "count") ($.Scratch.Get "max_show") }}
       {{- $.Scratch.Add "count" 1 }}
-    <a class="panel-block" href="{{ $page.Permalink }}">
+    <a class="panel-block" href="{{ $page.RelPermalink }}">
       <span class="icon is-small"><i class="fa fa-chevron-right"></i></span>
       <span>&nbsp;</span>
       <span>{{ $page.Title }}&nbsp;

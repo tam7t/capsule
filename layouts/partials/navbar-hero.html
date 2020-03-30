@@ -48,7 +48,7 @@
 {{- if (fileExists (print "/static" ($.Scratch.Get "hero"))) }}
   <!-- Hero content: will be in the middle -->
   <div class="hero-body"
-       style="background:url('{{ .Site.BaseURL }}/{{ $.Scratch.Get "prefix" }}{{ $.Scratch.Get "hero" }}') center;
+       style="background:url('{{ $.Scratch.Get "prefix" }}{{ $.Scratch.Get "hero" }}') center;
               background-size: 100% auto;
               padding:15rem;">
   </div>
